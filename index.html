@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compra Prospera — Comunidade VIP de Ofertas</title>
+  <meta name="description" content="Entre grátis na Comunidade Compra Prospera e escolha seu grupo: Beleza, Casa, Infantil e Homens. Ofertas reais, cupons e promoções relâmpago." />
+  <meta name="theme-color" content="#16a34a" />
+
+  <!-- Open Graph (preview ao compartilhar) -->
+  <meta property="og:title" content="Compra Prospera — Comunidade VIP de Ofertas" />
+  <meta property="og:description" content="Ofertas reais + cupons + promoções relâmpago. Escolha sua categoria e entre grátis." />
+  <meta property="og:type" content="website" />
+  <!-- Use og.jpg se você criar um banner. Se não tiver, deixe logo.png -->
+  <meta property="og:image" content="https://compraprospera.com/logo.png" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b34;
+      --muted:#9db0d0;
+      --text:#e9f0ff;
+      --accent:#16a34a;
+      --accent2:#22c55e;
+      --warning:#fbbf24;
+      --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(34,197,94,.22), transparent 55%),
+        radial-gradient(900px 500px at 80% 20%, rgba(251,191,36,.18), transparent 55%),
+        radial-gradient(900px 700px at 50% 90%, rgba(59,130,246,.18), transparent 60%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:10px 0 18px;border-bottom:1px solid var(--border);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logoImg{
+      width:44px;height:44px;border-radius:12px;
+      object-fit:cover;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+    }
+    .brand h1{font-size:16px;margin:0;line-height:1}
+    .brand p{font-size:12px;margin:3px 0 0;color:var(--muted)}
+    .pill{
+      font-size:12px;color:#0b1220;
+      background:linear-gradient(135deg,var(--warning),#f59e0b);
+      padding:8px 10px;border-radius:999px;font-weight:800;
+      box-shadow:0 10px 20px rgba(0,0,0,.25);
+      white-space:nowrap;
+    }
+
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:26px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{
+      background:rgba(15,27,52,.78);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      font-size:12px;font-weight:900;letter-spacing:.3px;
+      color:#c7f9d4;
+      background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.25);
+      padding:8px 10px;border-radius:999px;
+      margin-bottom:14px;
+    }
+    .kicker span{width:8px;height:8px;border-radius:999px;background:var(--accent2);display:inline-block}
+    .title{font-size:38px;line-height:1.05;margin:0 0 12px}
+    @media (max-width:520px){.title{font-size:30px}}
+    .subtitle{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 18px}
+
+    .bullets{display:grid;gap:10px;margin:16px 0 18px}
+    .bullet{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:12px 12px;border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+    }
+    .check{
+      width:20px;height:20px;border-radius:6px;
+      background:rgba(34,197,94,.20);
+      border:1px solid rgba(34,197,94,.35);
+      display:grid;place-items:center;font-weight:900;color:#a7f3d0;
+      flex:0 0 auto;
+    }
+    .bullet b{display:block;font-size:13px;margin-bottom:2px}
+    .bullet small{color:var(--muted);font-size:12px;line-height:1.35}
+
+    .ctaGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:8px;
+    }
+    @media (max-width:520px){.ctaGrid{grid-template-columns:1fr}}
+
+    .btn{
+      appearance:none;border:0;cursor:pointer;
+      padding:14px 14px;border-radius:14px;
+      font-weight:900;font-size:14px;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      box-shadow:0 18px 40px rgba(0,0,0,.30);
+      text-decoration:none;
+      text-align:center;
+      user-select:none;
+    }
+    .btnPrimary{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#04110a;
+    }
+    .btnGhost{
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      color:var(--text);
+    }
+    .btnSoft{
+      background:rgba(34,197,94,.12);
+      border:1px solid rgba(34,197,94,.25);
+      color:#dbffea;
+    }
+
+    .hint{color:var(--muted);font-size:12px;margin:12px 0 0}
+    .right .box{display:grid;gap:12px}
+    .stat{
+      padding:14px;border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+    }
+    .stat b{font-size:12px;color:#dbeafe}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.35}
+    .proof{
+      margin-top:14px;
+      padding:14px;border-radius:16px;
+      border:1px dashed rgba(255,255,255,.18);
+      color:var(--muted);font-size:12px;line-height:1.45;
+    }
+    .footer{
+      margin-top:22px;
+      color:rgba(255,255,255,.55);
+      font-size:11px;line-height:1.5;
+      padding:18px 0 0;border-top:1px solid var(--border);
+    }
+    .miniRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .mini{
+      font-size:11px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:rgba(233,240,255,.85)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand" aria-label="Compra Prospera">
+        <img class="logoImg" src="/logo.png" alt="Compra Prospera" />
+        <div>
+          <h1>Compra Prospera</h1>
+          <p>Comunidade VIP de ofertas e cupons</p>
+        </div>
+      </div>
+      <div class="pill">⚡ Vagas limitadas hoje</div>
+    </header>
+
+    <main class="hero">
+      <section class="card left">
+        <div class="kicker"><span></span> ACESSO GRATUITO • ESCOLHA SUA CATEGORIA</div>
+        <h2 class="title">🔥 Entre na Comunidade e receba ofertas antes de acabar</h2>
+        <p class="subtitle">
+          Aqui você entra grátis, escolhe o grupo do seu interesse e recebe <b>promoções relâmpago</b>, <b>cupons</b>
+          e <b>achadinhos reais</b> que somem rápido.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet">
+            <div class="check">✓</div>
+            <div>
+              <b>Organizado por grupos</b>
+              <small>Beleza, Casa, Infantil e Homens — você entra só no que quer.</small>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="check">✓</div>
+            <div>
+              <b>Ofertas verificadas</b>
+              <small>Sem spam e sem bagunça: só ofertas e cupons que valem a pena.</small>
+            </div>
+          </div>
+          <div class="bullet">
+            <div class="check">✓</div>
+            <div>
+              <b>Promoções relâmpago</b>
+              <small>Quando aparece, acaba rápido — quem está dentro pega primeiro.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões por categoria -->
+        <div class="ctaGrid" aria-label="Escolher categoria">
+          <a id="btn-beleza" class="btn btnSoft" href="#" rel="nofollow">💄 Entrar em Beleza</a>
+          <a id="btn-casa" class="btn btnSoft" href="#" rel="nofollow">🏠 Entrar em Casa</a>
+          <a id="btn-infantil" class="btn btnSoft" href="#" rel="nofollow">👶 Entrar em Infantil</a>
+          <a id="btn-homens" class="btn btnSoft" href="#" rel="nofollow">🛍️ Entrar em Homens</a>
+        </div>
+
+        <!-- Botão para comunidade (recomendado manter) -->
+        <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a id="btn-comunidade" class="btn btnPrimary" href="#" rel="nofollow" style="min-width:260px;">
+            📲 Entrar na Comunidade (oficial)
+          </a>
+          <a class="btn btnGhost" href="#como-funciona">Como funciona</a>
+        </div>
+
+        <p class="hint">✅ Entrada grátis • ⚠️ Se lotar, o link pode ser fechado • 🔔 Ative as notificações</p>
+
+        <div class="miniRow" aria-label="Destaques">
+          <div class="mini">💄 Beleza</div>
+          <div class="mini">🏠 Casa</div>
+          <div class="mini">👶 Infantil</div>
+          <div class="mini">🛍️ Homens</div>
+        </div>
+      </section>
+
+      <aside class="card right">
+        <div class="box">
+          <div class="stat">
+            <b>🕒 Horários de ofertas</b>
+            <p>Manhã • Tarde • Noite (relâmpagos). Grupo quente vende mais.</p>
+          </div>
+          <div class="stat">
+            <b>📌 Regras rápidas</b>
+            <p>Sem links aleatórios, sem correntes e sem spam. Só oferta e cupom.</p>
+          </div>
+          <div class="stat">
+            <b>✅ Dica pra não perder</b>
+            <p>Ative as notificações do(s) grupo(s) que escolher para pegar as promoções a tempo.</p>
+          </div>
+
+          <div class="proof" id="como-funciona">
+            <b style="color:#e9f0ff">Como funciona:</b><br/>
+            1) Você escolhe uma categoria (ou entra direto na Comunidade).<br/>
+            2) Entra no WhatsApp e participa do(s) grupo(s) que quiser.<br/>
+            3) Recebe ofertas e cupons em primeira mão.
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Compra Prospera. Conteúdo promocional. Preços podem variar e ofertas podem expirar.</div>
+    </footer>
+  </div>
+
+  <script>
+    // =========================
+    // CONFIGURE AQUI SEUS LINKS
+    // =========================
+
+    // Link da Comunidade (recomendado para tráfego pago)
+    const LINK_COMUNIDADE = "COLE_AQUI_LINK_DA_SUA_COMUNIDADE";
+
+    // Links dos grupos (se você preferir mandar direto por categoria)
+    const LINKS_GRUPOS = {
+      beleza:   "COLE_AQUI_LINK_GRUPO_BELEZA",
+      casa:     "COLE_AQUI_LINK_GRUPO_CASA",
+      infantil: "COLE_AQUI_LINK_GRUPO_INFANTIL",
+      homens:   "COLE_AQUI_LINK_GRUPO_HOMENS"
+    };
+
+    // =========================
+    // UTM PASS-THROUGH (MEDIÇÃO)
+    // =========================
+    function getUtmParams() {
+      const params = new URLSearchParams(window.location.search);
+      const keys = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
+      const out = {};
+      keys.forEach(k => { if (params.get(k)) out[k] = params.get(k); });
+      return out;
+    }
+
+    function appendUtm(url) {
+      const utm = getUtmParams();
+      if (Object.keys(utm).length === 0) return url;
+
+      const qs = new URLSearchParams(utm).toString();
+      const joiner = url.includes("?") ? "&" : "?";
+      return url + joiner + qs;
+    }
+
+    function safeSetHref(id, link) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      // Se não colar o link, não quebra: desabilita clique
+      if (!link || link.startsWith("COLE_AQUI")) {
+        el.href = "#";
+        el.style.opacity = "0.55";
+        el.style.pointerEvents = "none";
+        el.title = "Configure o link deste botão no index.html";
+        return;
+      }
+      el.href = appendUtm(link);
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    safeSetHref("btn-comunidade", LINK_COMUNIDADE);
+    safeSetHref("btn-beleza", LINKS_GRUPOS.beleza);
+    safeSetHref("btn-casa", LINKS_GRUPOS.casa);
+    safeSetHref("btn-infantil", LINKS_GRUPOS.infantil);
+    safeSetHref("btn-homens", LINKS_GRUPOS.homens);
+  </script>
+</body>
+</html>
